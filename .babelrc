@@ -14,7 +14,15 @@
       ],
     },
     "server": {
-      "client:dev": ""
+      "presets": [
+        [
+          "env", {
+            "targets": {
+              "node": true
+            }
+          }
+        ]
+      ]
     }
   }
 }
