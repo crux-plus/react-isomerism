@@ -1,1 +1,12 @@
-{}
+{
+  "restartable": "rs",
+  "verbose": true,
+  "execMap": {
+    "js": "babel-node"
+  },
+  "env": {
+    "BABEL_ENV": "server",
+    "NODE_ENV": "development"
+  },
+  "ext": "js json"
+}

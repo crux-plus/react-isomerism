@@ -12,6 +12,7 @@
     "test": "flow",
     "prepush": "yarn test",
     "build": "BABEL_ENV=client webpack --config webpack.config.dev.babel.js",
+    "server:dev": "nodemon ./src/server/index.js",
     "client:dev": "BABEL_ENV=client webpack-dev-server --config webpack.config.dev.babel.js"
   },
   "ava": {
@@ -52,5 +53,8 @@
     "pm2": "^2.7.2",
     "socket.io": "^2.0.4",
     "webpack-dev-server": "^2.9.3"
+  },
+  "peerDependencies": {
+    "babel-plugin-module-resolver": "^2.7.1"
   }
 }
