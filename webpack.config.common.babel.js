@@ -21,7 +21,6 @@ export default {
 
   output: {
     // options related to how webpack emits results
-
     path: path.resolve(__dirname, 'dist'), // string
     // the target directory for all output files
     // must be an absolute path (use the Node.js path module)
@@ -31,7 +30,6 @@ export default {
 
     libraryTarget: 'umd', // universal module definition
     // the type of the exported library
-
     /* Advanced output configuration (click to show) */
   },
 
@@ -48,7 +46,6 @@ export default {
         }
       },
     ],
-
     /* Advanced module configuration (click to show) */
   },
 
@@ -70,12 +67,11 @@ export default {
 
       'client': 'client',
       // alias "client" -> "client" and "module/path/file" -> "new-module/path/file"
-
+      //
       'isomerism': 'isomerism',
       // alias "isomerism" -> "isomerism", but not "only-module/path/file" -> "new-module/path/file"
     },
     /* alternative alias syntax (click to show) */
-
     /* Advanced resolve configuration (click to show) */
   },
 
@@ -86,13 +82,13 @@ export default {
     assetFilter: function(assetFilename) {
       // Function predicate that provides asset filenames
       return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
-    }
+    },
   },
 
   context: __dirname, // string (absolute path!)
   // the home directory for webpack
   // the entry and module.rules.loader option
-  //   is resolved relative to this directory
+  // is resolved relative to this directory
 
   target: 'web', // enum
   // the environment in which the bundle should run
