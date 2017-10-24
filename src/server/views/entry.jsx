@@ -1,3 +1,6 @@
+// Runtime type checking for React props and similar objects.
+import PropTypes from 'prop-types';
+
 // The ReactDOMServer object enables you to render components to static
 // markup. Typically, it’s used on a Node server:
 import ReactDOMServer from 'react-dom/server';
@@ -14,7 +17,7 @@ import Boilerplate from 'server/components/commmon/Boilerplate';
 
 import Entry from 'isomerism/routers/Entry';
 
-class Root extends React.Component {
+class entry extends React.Component {
   /**
    * @constructor
    */
@@ -58,4 +61,12 @@ class Root extends React.Component {
   }
 }
 
-export default Root;
+entry.propTypes = {
+  path: PropTypes.string,
+};
+
+entry.defaultProps = {
+  path: '/',
+};
+
+export default entry;
