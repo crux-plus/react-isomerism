@@ -1,3 +1,6 @@
+// Runtime type checking for React props and similar objects.
+import PropTypes from 'prop-types';
+
 // React is the entry point to the React library. If you load React from a
 // <script> tag, these top-level APIs are available on the React global.
 import React from 'react';
@@ -29,5 +32,13 @@ class Entry extends React.Component {
     );
   }
 }
+
+Entry.propTypes = {
+  path: PropTypes.string,
+};
+
+Entry.defaultProps = {
+  path: '/',
+};
 
 export default Entry;
