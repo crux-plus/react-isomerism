@@ -1,0 +1,20 @@
+{
+  "env": {
+    "client": {
+      "presets": ["env", "stage-3", "react", "flow"],
+      "plugins": [
+        [
+          "transform-runtime", {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }
+        ]
+      ],
+    },
+    "server": {
+      "client:dev": ""
+    }
+  }
+}

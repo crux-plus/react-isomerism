@@ -6,9 +6,30 @@
     "url": "git@github.com:crux-plus/react-isomerism.git",
     "type": "git"
   },
-  "author": "crux",
+  "author": "crux++",
   "license": "MIT",
+  "scripts": {
+    "test": "eslint src && flow",
+    "precommit": "yarn test",
+    "prepush": "yarn test"
+  },
   "devDependencies": {
+    "husky": "^0.14.3",
     "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "eslint": "^4.9.0",
+    "flow": "^0.2.3",
+    "flow-bin": "^0.57.3",
+    "nodemon": "^1.12.1",
+    "pm2": "^2.7.2",
+    "webpack-dev-server": "^2.9.3"
   }
 }
