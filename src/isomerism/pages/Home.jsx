@@ -2,6 +2,9 @@
 // <script> tag, these top-level APIs are available on the React global.
 import React from 'react';
 
+/**
+ * @class
+ */
 class Home extends React.Component {
   /**
    * @constructor

@@ -13,6 +13,9 @@ import React from 'react';
 // document head.
 import { Helmet } from 'react-helmet';
 
+/**
+ * @class
+ */
 class Boilerplate extends React.Component {
   /**
    * @constructor

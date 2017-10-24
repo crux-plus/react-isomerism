@@ -17,6 +17,9 @@ import Boilerplate from 'server/components/commmon/Boilerplate';
 
 import Entry from 'isomerism/routers/Entry';
 
+/**
+ * @class
+ */
 class entry extends React.Component {
   /**
    * @constructor

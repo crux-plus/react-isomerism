@@ -12,6 +12,9 @@ import Home from 'isomerism/pages/Home';
 
 import Test from 'isomerism/pages/Test';
 
+/**
+ * @class
+ */
 class Entry extends React.Component {
   /**
    * @constructor
