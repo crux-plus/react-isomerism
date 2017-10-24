@@ -1,0 +1,14 @@
+{
+  "name": "react-isomerism",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:crux-plus/react-isomerism.git",
+    "type": "git"
+  },
+  "author": "crux",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  }
+}
