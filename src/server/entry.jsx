@@ -10,9 +10,10 @@ import React from 'react';
 
 import Entry from 'isomerism/routers/Entry';
 
-// Render a React element into the DOM in the supplied container and return a
-// reference to the component (or returns null for stateless components).
-ReactDOM.render(
+// Same as render(), but is used to hydrate a container whose HTML contents
+// were rendered by ReactDOMServer. React will attempt to attach event
+// listeners to the existing markup.
+ReactDOM.hydrate(
   <Entry />,
   document.querySelector('main'),
 );

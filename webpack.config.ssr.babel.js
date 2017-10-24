@@ -15,6 +15,10 @@ export default {
   // Application common configuration
   ...common,
 
+  entry: './src/server/entry', // string | object | array
+  // Here the application starts executing
+  // and webpack starts bundling
+
   // list of additional plugins
   plugins: [
     ...common.plugins,
@@ -23,7 +27,7 @@ export default {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'BABEL_ENV': JSON.stringify('client'),
+        'BABEL_ENV': JSON.stringify('server'),
         'NODE_ENV': JSON.stringify('development'),
       },
     })
