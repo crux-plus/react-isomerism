@@ -27,8 +27,10 @@
     "eslint": "^4.9.0",
     "flow": "^0.2.3",
     "flow-bin": "^0.57.3",
+    "koa": "^2.3.0",
     "nodemon": "^1.12.1",
     "pm2": "^2.7.2",
+    "socket.io": "^2.0.4",
     "webpack-dev-server": "^2.9.3"
   }
 }
