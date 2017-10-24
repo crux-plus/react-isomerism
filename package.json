@@ -9,7 +9,7 @@
   "author": "crux++",
   "license": "MIT",
   "scripts": {
-    "test": "eslint src && flow && ava",
+    "test": "eslint src && flow",
     "prepush": "yarn test"
   },
   "ava": {
