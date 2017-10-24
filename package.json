@@ -9,7 +9,7 @@
   "author": "crux++",
   "license": "MIT",
   "scripts": {
-    "test": "eslint src && flow",
+    "test": "flow",
     "prepush": "yarn test",
     "build": "BABEL_ENV=client webpack --config webpack.config.dev.babel.js",
     "client:dev": "BABEL_ENV=client webpack-dev-server --config webpack.config.dev.babel.js"
