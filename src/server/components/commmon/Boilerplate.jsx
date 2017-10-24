@@ -70,7 +70,7 @@ class Boilerplate extends React.Component {
           {this.state.link}
           {this.state.meta}
         </head>
-        <body {...this.state.htmlAttrs}>
+        <body {...this.state.bodyAttrs}>
           <main
             dangerouslySetInnerHTML={{__html: this.state.innerHTML}}
           >
