@@ -40,6 +40,13 @@ export default {
 
     rules: [
       // rules for modules (configure loaders, parser options, etc.)
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+        }
+      },
     ],
 
     /* Advanced module configuration (click to show) */
