@@ -10,7 +10,6 @@
   "license": "MIT",
   "scripts": {
     "test": "eslint src && flow",
-    "precommit": "yarn test",
     "prepush": "yarn test"
   },
   "devDependencies": {
