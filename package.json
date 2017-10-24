@@ -10,7 +10,9 @@
   "license": "MIT",
   "scripts": {
     "test": "eslint src && flow",
-    "prepush": "yarn test"
+    "prepush": "yarn test",
+    "build": "BABEL_ENV=client webpack --config webpack.config.dev.babel.js",
+    "client:dev": "BABEL_ENV=client webpack-dev-server --config webpack.config.dev.babel.js"
   },
   "ava": {
     "files": [
@@ -27,6 +29,7 @@
     "babel": "inherit"
   },
   "devDependencies": {
+    "babel-plugin-root-import": "^5.1.0",
     "husky": "^0.14.3",
     "webpack": "^3.8.1"
   },
@@ -39,9 +42,11 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "babel-runtime": "^6.26.0",
+    "clean-webpack-plugin": "^0.1.17",
     "eslint": "^4.9.0",
     "flow": "^0.2.3",
     "flow-bin": "^0.57.3",
+    "html-webpack-plugin": "^2.30.1",
     "koa": "^2.3.0",
     "nodemon": "^1.12.1",
     "pm2": "^2.7.2",

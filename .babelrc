@@ -3,6 +3,7 @@
     "client": {
       "presets": ["env", "stage-3", "react", "flow"],
       "plugins": [
+        "babel-plugin-root-import",
         [
           "transform-runtime", {
             "helpers": false,
