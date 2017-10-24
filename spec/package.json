@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "clean-webpack-plugin": "^0.1.17",
-    "html-webpack-plugin": "^2.30.1"
-  }
-}
