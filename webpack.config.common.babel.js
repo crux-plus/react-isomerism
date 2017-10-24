@@ -103,4 +103,4 @@ export default {
     new CleanWebpackPlugin(['dist']),
   ],
   /* Advanced configuration (click to show) */
-}
+};
