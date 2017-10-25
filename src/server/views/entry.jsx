@@ -17,7 +17,7 @@ import Boilerplate from 'server/components/commmon/Boilerplate';
 
 import Head from 'server/components/commmon/Head';
 
-import Entry from 'isomerism/routers/Entry';
+import Entry from 'server/components/routers/Entry';
 
 /**
  * @class

@@ -3,6 +3,7 @@
     "client": {
       "presets": ["env", "stage-3", "react", "flow"],
       "plugins": [
+        "dynamic-import-webpack",
         "babel-plugin-root-import",
         [
           "transform-runtime", {
@@ -27,7 +28,9 @@
         ]
       ],
       "plugins": [
+        "dynamic-import-webpack",
         "transform-object-rest-spread",
+        "dynamic-import-node",
         "babel-plugin-root-import",
         [
           "module-resolver", {

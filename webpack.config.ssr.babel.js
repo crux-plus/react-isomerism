@@ -18,6 +18,17 @@ export default {
   entry: './src/server/entry', // string | object | array
   // Here the application starts executing
   // and webpack starts bundling
+  //
+  // The top-level output key contains set of options instructing webpack on
+  // how and where it should output your bundles, assets and anything else you
+  // bundle or load with webpack.
+  output: {
+    ...common.output,
+
+    // This option determines the name of non-entry chunk files. See
+    // output.filename option for details on the possible values.
+    chunkFilename: '[name].bundle.js',
+  },
 
   // list of additional plugins
   plugins: [

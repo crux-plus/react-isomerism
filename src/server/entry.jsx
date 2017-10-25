@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom';
 // <script> tag, these top-level APIs are available on the React global.
 import React from 'react';
 
-import Entry from 'isomerism/routers/Entry';
+import Entry from 'client/routers/Entry';
 
 // Same as render(), but is used to hydrate a container whose HTML contents
 // were rendered by ReactDOMServer. React will attempt to attach event
