@@ -18,7 +18,7 @@ export default {
   // Application common configuration
   ...common,
 
-  entry: './src/server/entry', // string | object | array
+  entry: './src/react/server/entry', // string | object | array
   // Here the application starts executing
   // and webpack starts bundling
   //
