@@ -21,6 +21,25 @@ class Entry extends React.Component {
    */
   constructor(props) {
     super(props);
+    const {
+      path,
+    } = this.props;
+    this.state = {
+      path: path,
+    };
+    this.hanldeNavigation = this.hanldeNavigation.bind(this);
+  }
+
+  /**
+   * @method
+   */
+  componentWillReceiveProps(nextProps) {
+    const {
+      path,
+    } = nextProps;
+    this.setState({
+      path: path,
+    });
   }
 
   /**
@@ -28,11 +47,30 @@ class Entry extends React.Component {
    */
   render() {
     return (
-      <Locations path={this.props.path}>
+      <Locations
+        path={this.state.path}
+        onNavigation={this.hanldeNavigation}
+      >
         <Location path="/" handler={Home} />
         <Location path="/test" handler={Test} />
       </Locations>
     );
+  }
+
+  /**
+   * @method
+   */
+  //hanldeNavigation(navigation, nextNavigation) {
+  hanldeNavigation() {
+    const {
+      pathname: path,
+    } = location;
+    const nextProps = {
+      ...this.props,
+      path,
+    };
+    this.props = nextProps;
+    this.componentWillReceiveProps(nextProps);
   }
 }
 
