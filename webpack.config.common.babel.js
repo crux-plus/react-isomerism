@@ -41,9 +41,29 @@ export default {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
+        // Webpack plugin for Babel
         use: {
           loader: 'babel-loader',
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          // style loader module for webpack
+          {
+            loader: 'style-loader',
+          },
+          // css loader module for webpack
+          {
+            loader: "css-loader',
+            options: {
+              // Enable/Disable CSS Modules
+              modules: true,
+              // Configure the generated ident
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+            }
+          },
+        ]
       },
     ],
     /* Advanced module configuration (click to show) */

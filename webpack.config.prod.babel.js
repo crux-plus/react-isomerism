@@ -27,6 +27,20 @@ export default {
     chunkFilename: '[name].bundle.js',
   },
 
+  module: {
+    // configuration regarding modules
+
+    rules: [
+      ...commmon.module.rules,
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader?modules,localIdentName="[path][name]__[local]--[hash:base64:5]"'
+      }),
+    ],
+      // rules for modules (configure loaders, parser options, etc.)
+    /* Advanced module configuration (click to show) */
+  },
+
   // list of additional plugins
   plugins: [
     ...common.plugins,
@@ -49,7 +63,7 @@ export default {
       filename: 'bundle.css',
       disable: false,
       allChunks: true
-    })
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         'BABEL_ENV': JSON.stringify('client'),
