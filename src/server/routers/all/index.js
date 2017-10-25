@@ -3,7 +3,7 @@ import Router from 'koa-trie-router';
 
 const root = new Router();
 
-root.get('/', async (ctx, next) => {
+root.use(async (ctx, next) => {
   const {
     path,
   } = ctx;

@@ -13,26 +13,20 @@ import React from 'react';
 // document head.
 import { Helmet } from 'react-helmet';
 
-import Boilerplate from 'server/components/commmon/Boilerplate';
-
-import Head from 'server/components/commmon/Head';
-
-import Entry from 'isomerism/routers/Entry';
-
 /**
  * @class
  */
-class entry extends React.Component {
+class Head extends React.Component {
   /**
    * @constructor
    */
   constructor(props) {
     super(props);
     const {
-      path,
+      children,
     } = this.props;
     this.state = {
-      path,
+      expandHead: children,
     };
   }
 
@@ -41,10 +35,10 @@ class entry extends React.Component {
    */
   componentWillReceiveProps(nextProps) {
     const {
-      path,
+      children,
     } = nextProps;
     this.setState({
-      path,
+      expandHead: children,
     });
   }
 
@@ -53,20 +47,25 @@ class entry extends React.Component {
    */
   render() {
     return (
-      <Boilerplate>
-        <Head />
-        <Entry path={this.state.path} />
-      </Boilerplate>
+      <Helmet>
+        <html lang="en" />,
+        <title>Koa App</title>,
+        <meta charset="utf-8" />,
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />,
+        <meta name="description" content="This is a description" />,
+        <meta name="viewport" content="width=device-width, initial-scale=1" />,
+        {this.state.expandHead}
+      </Helmet>
     );
   }
 }
 
-entry.propTypes = {
-  path: PropTypes.string,
+Head.propTypes = {
+  children: PropTypes.children,
 };
 
-entry.defaultProps = {
-  path: '/',
+Head.defaultProps = {
+  children: null,
 };
 
-export default entry;
+export default Head;

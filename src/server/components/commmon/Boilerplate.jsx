@@ -23,9 +23,10 @@ class Boilerplate extends React.Component {
   constructor(props) {
     super(props);
     const {
-      helmet,
       children,
     } = this.props;
+    const innerHTML = ReactDOMServer.renderToString(children);
+    const helmet = Helmet.renderStatic();
     this.state = {
       title: helmet.title.toComponent(),
       meta: helmet.meta.toComponent(),
@@ -60,14 +61,6 @@ class Boilerplate extends React.Component {
   render() {
     return (
       <html {...this.state.htmlAttrs}>
-        <Helmet>
-          <html lang="en" />
-          <title>Koa App</title>
-          <meta charset="utf-8" />
-          <meta http-equiv="x-ua-compatible" content="ie=edge" />
-          <meta name="description" content="This is a description" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </Helmet>
         <head>
           {this.state.title}
           {this.state.link}
@@ -85,12 +78,10 @@ class Boilerplate extends React.Component {
 }
 
 Boilerplate.propTypes = {
-  helmet: PropTypes.object,
   children: PropTypes.object,
 };
 
 Boilerplate.defaultProps = {
-  helmet: null,
   children: null,
 };
 

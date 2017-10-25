@@ -1,10 +1,10 @@
 // Trie-routing for Koa.
 import Router from 'koa-trie-router';
 
-import root from 'server/routers/root';
+import all from 'server/routers/all';
 
 const routers = new Router();
 
-routers.use(root.middleware());
+routers.use(all.middleware());
 
 export default routers;
