@@ -61,7 +61,10 @@ class Head extends React.Component {
 }
 
 Head.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]),
 };
 
 Head.defaultProps = {
