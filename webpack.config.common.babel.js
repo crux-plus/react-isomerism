@@ -15,7 +15,7 @@ import path from 'path';
 // object spread rest. With the "common" configuration in place, we won't have
 // to duplicate code within the environment-specific configurations.
 export default {
-  entry: './src/client/entry', // string | object | array
+  entry: './src/react/client/entry', // string | object | array
   // Here the application starts executing
   // and webpack starts bundling
 
@@ -55,7 +55,7 @@ export default {
           },
           // css loader module for webpack
           {
-            loader: "css-loader',
+            loader: 'css-loader',
             options: {
               // Enable/Disable CSS Modules
               modules: true,
@@ -84,12 +84,11 @@ export default {
 
     alias: {
       // a list of module name aliases
-
-      'client': 'client',
-      // alias "client" -> "client" and "module/path/file" -> "new-module/path/file"
+      'koa': 'koa',
+      // alias "koa" -> "koa" and "module/path/file" -> "new-module/path/file"
       //
-      'isomerism': 'isomerism',
-      // alias "isomerism" -> "isomerism", but not "only-module/path/file" -> "new-module/path/file"
+      'react': 'react',
+      // alias "react" -> "react", but not "only-module/path/file" -> "new-module/path/file"
     },
     /* alternative alias syntax (click to show) */
     /* Advanced resolve configuration (click to show) */

@@ -13,11 +13,11 @@ import React from 'react';
 // document head.
 import { Helmet } from 'react-helmet';
 
-import Boilerplate from 'server/components/commmon/Boilerplate';
+import Boilerplate from 'react/server/components/commmon/Boilerplate';
 
-import Head from 'server/components/commmon/Head';
+import Head from 'react/server/components/commmon/Head';
 
-import Entry from 'server/components/routers/Entry';
+import Entry from 'react/server/routers/Entry';
 
 /**
  * @class

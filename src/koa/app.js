@@ -9,7 +9,7 @@ import webpack from 'koa-webpack';
 
 import path from 'path';
 
-import routers from 'server/routers';
+import routers from 'koa/routers';
 
 const app = new Koa();
 

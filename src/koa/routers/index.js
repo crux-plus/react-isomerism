@@ -1,7 +1,7 @@
 // Trie-routing for Koa.
 import Router from 'koa-trie-router';
 
-import all from 'server/routers/all';
+import all from 'koa/routers/all';
 
 const routers = new Router();
 

@@ -3,6 +3,6 @@ require('babel-core/register');
 
 import http from 'http';
 
-import app from 'server/app';
+import app from 'koa/app';
 
 http.createServer(app.callback()).listen(3000);

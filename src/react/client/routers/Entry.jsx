@@ -8,9 +8,9 @@ import React from 'react';
 // Declarative router component for React.
 import  { Locations, Location } from 'react-router-component';
 
-import Home from 'isomerism/locations/Home';
+import Home from 'react/isomerism/handlers/Home';
 
-import Test from 'isomerism/locations/Test';
+import Test from 'react/isomerism/handlers/Test';
 
 /**
  * @class
@@ -23,14 +23,25 @@ class Entry extends React.Component {
     super(props);
   }
 
+
+  /**
+   * @method
+   */
+  componentWillReceiveProps(nextProps) {
+    const {
+      path,
+    } = nextProps;
+    this.setState({
+      path,
+    });
+  }
+
   /**
    * @method
    */
   render() {
     return (
-      <Locations
-        path={this.props.path}
-      >
+      <Locations>
         <Location path="/" handler={Home} />
         <Location path="/test" handler={Test} />
       </Locations>

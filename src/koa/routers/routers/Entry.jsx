@@ -8,9 +8,9 @@ import React from 'react';
 // Declarative router component for React.
 import  { Locations, Location } from 'react-router-component';
 
-import Home from 'isomerism/handlers/Home';
+import Home from 'react/isomerism/handlers/Home';
 
-import Test from 'isomerism/handlers/Test';
+import Test from 'react/isomerism/handlers/Test';
 
 /**
  * @class

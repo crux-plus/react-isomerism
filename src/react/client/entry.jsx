@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom';
 // <script> tag, these top-level APIs are available on the React global.
 import React from 'react';
 
-import Entry from 'client/routers/Entry';
+import Entry from 'react/client/routers/Entry';
 
 // Render a React element into the DOM in the supplied container and return a
 // reference to the component (or returns null for stateless components).

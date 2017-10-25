@@ -1,3 +1,6 @@
+// Extract text from bundle into a file.
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+
 // A bundler for javascript and friends. Packs many modules into a few bundled
 // assets. Code Splitting allows to load parts for the application on demand.
 // Through "loaders," modules can be CommonJs, AMD, ES6 modules, CSS, Images,
@@ -32,13 +35,15 @@ export default {
 
   module: {
     // configuration regarding modules
-
     rules: [
-      ...commmon.module.rules,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: 'css-loader?modules,localIdentName="[path][name]__[local]--[hash:base64:5]"'
-      }),
+      ...common.module.rules,
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader?modules,localIdentName="[path][name]__[local]--[hash:base64:5]"'
+        }),
+      },
     ],
       // rules for modules (configure loaders, parser options, etc.)
     /* Advanced module configuration (click to show) */

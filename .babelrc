@@ -41,8 +41,8 @@
           "module-resolver", {
             "root": ["./src"],
             "alias": {
-              "server": "server",
-              "isomerism": "isomerism"
+              "react": "react",
+              "koa": "koa"
             }
           }
         ]

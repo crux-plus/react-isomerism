@@ -5,4 +5,5 @@ import React from 'react';
 // The final answer to a React Universal Component: simultaneous SSR + Code Splitting
 import universal from 'react-universal-component';
 
-export default universal((props) => import('isomerism/locations/Home'));
+export default universal((props) => import('react/isomerism/locations/Test'));
+
