@@ -4,7 +4,7 @@ import Koa from 'koa';
 // A Koa view engine which renders React components on server.
 import react from 'koa-react-view';
 
-// Development and Hot Reload Middleware for Koa2
+// Development and Hot Reload Middleware for Koa2.
 import webpack from 'koa-webpack';
 
 import path from 'path';
@@ -27,12 +27,16 @@ app.use(webpack({
   // list of which is available at webpack-dev-middleware. Omitting this
   // property will result in webpack-dev-middleware using its default options.
   dev: {
-    // options for formating the statistics
+    // The stats option lets you precisely control what bundle information gets
+    // displayed. This can be a nice middle ground if you don't want to use
+    // quiet or noInfo because you want some bundle information, but not all
+    // of it.
     stats: {
-      // Display the distance from the entry point for each module
+      // Display the distance from the entry point for each module.
       colors: true,
     },
-    // public path to bind the middleware to use the same as in webpack
+    // options for formating the statistics public path to bind the middleware
+    // to use the same as in webpack.
     publicPath: '/',
     // Turn off the server-side rendering mode. See Server-Side Rendering part
     // for more info.

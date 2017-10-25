@@ -28,9 +28,9 @@ class entry extends React.Component {
    */
   static getAssetsComponents(webpackStats) {
     const assetsByChunkName = webpackStats.toJson().assetsByChunkName;
-    const mainAssetsSrc = assetsByChunkName['main'];
+    const mainAssets = assetsByChunkName['main'];
     return (
-      <script src={mainAssetsSrc}></script>
+      <script src={mainAssets}></script>
     );
   }
 

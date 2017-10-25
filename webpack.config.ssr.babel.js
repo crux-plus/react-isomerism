@@ -1,6 +1,9 @@
 // Extract text from bundle into a file.
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
+// Extract CSS from chunks into multiple stylesheets + HMR
+import ExtractCssChunks from 'extract-css-chunks-webpack-plugin';
+
 // A bundler for javascript and friends. Packs many modules into a few bundled
 // assets. Code Splitting allows to load parts for the application on demand.
 // Through "loaders," modules can be CommonJs, AMD, ES6 modules, CSS, Images,
@@ -36,12 +39,30 @@ export default {
   module: {
     // configuration regarding modules
     rules: [
-      ...common.module.rules,
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        // Webpack plugin for Babel
+        use: {
+          loader: 'babel-loader',
+        }
+      },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
+        use: ExtractCssChunks.extract({
           fallback: 'style-loader',
-          use: 'css-loader?modules,localIdentName="[path][name]__[local]--[hash:base64:5]"'
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                // Enable/Disable CSS Modules
+                modules: true,
+                // Configure the generated ident
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              }
+            },
+          ],
         }),
       },
     ],
@@ -52,19 +73,17 @@ export default {
   // list of additional plugins
   plugins: [
     ...common.plugins,
-    // Simplifies creation of HTML files to serve your webpack bundles
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'BABEL_ENV': JSON.stringify('server'),
+        'BABEL_ENV': JSON.stringify('client'),
         'NODE_ENV': JSON.stringify('development'),
       },
     }),
-    new ExtractTextPlugin({
-      filename: 'bundle.css',
-      disable: false,
-      allChunks: true
+    // Simplifies creation of HTML files to serve your webpack bundles
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractCssChunks({
+      filename: '[name].[contenthash].css',
     }),
   ],
 };

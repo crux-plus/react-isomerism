@@ -57,6 +57,7 @@ export default {
           {
             loader: 'css-loader',
             options: {
+              importLoaders: 1,
               // Enable/Disable CSS Modules
               modules: true,
               // Configure the generated ident

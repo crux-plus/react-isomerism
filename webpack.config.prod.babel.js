@@ -7,6 +7,8 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 // JSON, Coffeescript, LESS, ... and your custom stuff. https://webpack.js.org
 import webpack from 'webpack';
 
+import path from 'path';
+
 import common from '~/webpack.config.common.babel';
 
 //  In production, our goals shift to a focus on minified bundles, lighter
@@ -30,12 +32,34 @@ export default {
   module: {
     // configuration regarding modules
     rules: [
-      ...commmon.module.rules,
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        // Webpack plugin for Babel
+        use: {
+          loader: 'babel-loader',
+        }
+      },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader?modules,localIdentName="[path][name]__[local]--[hash:base64:5]"'
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                config: {
+                  path: path.join(__dirname, 'postcss.config.js'),
+                },
+              }
+            },
+          ],
         }),
       },
     ],
@@ -58,13 +82,18 @@ export default {
        }
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      // Specify the common bundle's name.
       name: 'vendor',
+      // Specify the common bundle's name.
+      children: true,
+      // (select all children of chosen chunks)
+      async: true,
+      // (create an async commons chunk)
+      minChunks: 3,
+      // (3 children must share the module before it's separated)
     }),
     new ExtractTextPlugin({
       filename: 'bundle.css',
-      disable: false,
-      allChunks: true
+      allChunks: true,
     }),
     new webpack.DefinePlugin({
       'process.env': {

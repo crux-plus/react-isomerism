@@ -26,6 +26,9 @@ class Boilerplate extends React.Component {
       children,
     } = this.props;
     const innerHTML = ReactDOMServer.renderToString(children);
+    const {
+      webpackStats,
+    } = this.props;
     const helmet = Helmet.renderStatic();
     this.state = {
       title: helmet.title.toComponent(),

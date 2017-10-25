@@ -33,9 +33,16 @@
         "dynamic-import-node",
         "babel-plugin-root-import",
         [
-          "react-css-modules", {
-            "generateScopedName": "[path]___[name]__[local]___[hash:base64:5]",
-          },
+          "css-modules-transform", {
+            "generateScopedName": "[path][name]__[local]--[hash:base64:5]",
+            "extensions": [".css"],
+          }
+        ],
+        [
+          "babel-plugin-webpack-loaders", {
+            "config": "webpack.config.ssr.babel.js",
+            "verbose": false,
+          }
         ],
         [
           "module-resolver", {
