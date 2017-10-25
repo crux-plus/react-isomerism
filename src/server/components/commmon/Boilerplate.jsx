@@ -31,6 +31,7 @@ class Boilerplate extends React.Component {
       title: helmet.title.toComponent(),
       meta: helmet.meta.toComponent(),
       link: helmet.link.toComponent(),
+      script: helmet.script.toComponent(),
       htmlAttrs: helmet.htmlAttributes.toComponent(),
       bodyAttrs: helmet.bodyAttributes.toComponent(),
       innerHTML: ReactDOMServer.renderToString(children),
@@ -48,6 +49,7 @@ class Boilerplate extends React.Component {
     this.setState({
       title: helmet.title.toComponent(),
       meta: helmet.meta.toComponent(),
+      script: helmet.script.toComponent(),
       link: helmet.link.toComponent(),
       htmlAttrs: helmet.htmlAttributes.toComponent(),
       bodyAttrs: helmet.bodyAttributes.toComponent(),
@@ -71,6 +73,7 @@ class Boilerplate extends React.Component {
             dangerouslySetInnerHTML={{__html: this.state.innerHTML}}
           >
           </main>
+          {this.state.script}
         </body>
       </html>
     );
@@ -78,7 +81,10 @@ class Boilerplate extends React.Component {
 }
 
 Boilerplate.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]),
 };
 
 Boilerplate.defaultProps = {

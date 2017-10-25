@@ -24,15 +24,28 @@ import Entry from 'isomerism/routers/Entry';
  */
 class entry extends React.Component {
   /**
+   * @method
+   */
+  static getAssetsComponents(webpackStats) {
+    const assetsByChunkName = webpackStats.toJson().assetsByChunkName;
+    const mainAssetsSrc = assetsByChunkName['main'];
+    return (
+      <script src={mainAssetsSrc}></script>
+    );
+  }
+
+  /**
    * @constructor
    */
   constructor(props) {
     super(props);
     const {
       path,
+      webpackStats,
     } = this.props;
     this.state = {
       path,
+      assets: entry.getAssetsComponents(webpackStats),
     };
   }
 
@@ -42,9 +55,11 @@ class entry extends React.Component {
   componentWillReceiveProps(nextProps) {
     const {
       path,
+      webpackStats,
     } = nextProps;
     this.setState({
       path,
+      assets: entry.getAssetsComponents(webpackStats),
     });
   }
 
@@ -54,7 +69,9 @@ class entry extends React.Component {
   render() {
     return (
       <Boilerplate>
-        <Head />
+        <Head>
+          {this.state.assets}
+        </Head>
         <Entry path={this.state.path} />
       </Boilerplate>
     );
