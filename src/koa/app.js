@@ -28,7 +28,10 @@ app.use(webpack({
   // property will result in webpack-dev-middleware using its default options.
   dev: {
     // options for formating the statistics
-    stats: { colors: true },
+    stats: {
+      // Display the distance from the entry point for each module
+      colors: true,
+    },
     // public path to bind the middleware to use the same as in webpack
     publicPath: '/',
     // Turn off the server-side rendering mode. See Server-Side Rendering part
