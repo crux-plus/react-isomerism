@@ -48,14 +48,6 @@ export default {
             {
               loader: 'css-loader',
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                config: {
-                  path: path.join(__dirname, 'postcss.config.js'),
-                },
-              }
-            },
           ],
         }),
       },
@@ -72,6 +64,11 @@ export default {
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       minimize: true,
+    }),
+    new webpack.DefinePlugin({
+       'process.env': {
+         'NODE_ENV': JSON.stringify('production'),
+       }
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',

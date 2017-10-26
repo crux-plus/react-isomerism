@@ -40,6 +40,12 @@
         [
           "react-css-modules", {
             "generateScopedName": "[path][name]__[local]--[hash:base64:5]",
+            "filetypes": {
+              ".css": {
+                "plugins": [
+                ],
+              }
+            }
           }
         ],
         [

@@ -350,6 +350,17 @@ autoprefixer@^6.3.1:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
+autoprefixer@^7.1.6:
+  version "7.1.6"
+  resolved "http://registry.npm.taobao.org/autoprefixer/download/autoprefixer-7.1.6.tgz#fb933039f74af74a83e71225ce78d9fd58ba84d7"
+  dependencies:
+    browserslist "^2.5.1"
+    caniuse-lite "^1.0.30000748"
+    normalize-range "^0.1.2"
+    num2fraction "^1.2.2"
+    postcss "^6.0.13"
+    postcss-value-parser "^3.2.3"
+
 ava-init@^0.2.0:
   version "0.2.1"
   resolved "http://registry.npm.taobao.org/ava-init/download/ava-init-0.2.1.tgz#75ac4c8553326290d2866e63b62fa7035684bd58"
@@ -1503,7 +1514,7 @@ browserslist@^1.3.6, browserslist@^1.5.2, browserslist@^1.7.6:
     caniuse-db "^1.0.30000639"
     electron-to-chromium "^1.2.7"
 
-browserslist@^2.1.2:
+browserslist@^2.1.2, browserslist@^2.5.1:
   version "2.5.1"
   resolved "http://registry.npm.taobao.org/browserslist/download/browserslist-2.5.1.tgz#68e4bc536bbcc6086d62843a2ffccea8396821c6"
   dependencies:
@@ -1623,6 +1634,10 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
 caniuse-lite@^1.0.30000744:
   version "1.0.30000750"
   resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000750.tgz#38ad19aa4c6d88da38e8900d3666b4e3bbb65c22"
+
+caniuse-lite@^1.0.30000748:
+  version "1.0.30000751"
+  resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000751.tgz#298ad34182ca4359757b4a93afc681b7b917e358"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
