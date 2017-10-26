@@ -43,9 +43,6 @@ export default {
         use: [
           {
             loader: 'babel-loader',
-            options: {
-              forceEnv: 'client',
-            },
           },
         ],
       },
