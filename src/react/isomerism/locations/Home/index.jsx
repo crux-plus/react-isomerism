@@ -10,7 +10,7 @@ import CSSModules from 'react-css-modules';
 // Declarative router component for React.
 import  { Link } from 'react-router-component';
 
-import styles from './home.css';
+import home from './home.css';
 
 /**
  * @class
@@ -29,7 +29,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1 className={styles.h1}>Home</h1>
+        <h1 styleName="home.h1">Home</h1>
         <div>
           <Link href="/test">test</Link>
         </div>

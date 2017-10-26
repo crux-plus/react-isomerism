@@ -6,6 +6,11 @@
         "dynamic-import-webpack",
         "babel-plugin-root-import",
         [
+          "react-css-modules", {
+            "generateScopedName": "[path][name]__[local]--[hash:base64:5]",
+          }
+        ],
+        [
           "transform-runtime", {
             "helpers": false,
             "polyfill": false,
@@ -28,20 +33,13 @@
         ]
       ],
       "plugins": [
+        "dynamic-import-node",
         "dynamic-import-webpack",
         "transform-object-rest-spread",
-        "dynamic-import-node",
         "babel-plugin-root-import",
         [
-          "css-modules-transform", {
+          "react-css-modules", {
             "generateScopedName": "[path][name]__[local]--[hash:base64:5]",
-            "extensions": [".css"],
-          }
-        ],
-        [
-          "babel-plugin-webpack-loaders", {
-            "config": "webpack.config.ssr.babel.js",
-            "verbose": false,
           }
         ],
         [

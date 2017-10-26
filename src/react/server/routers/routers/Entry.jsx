@@ -24,12 +24,11 @@ class Entry extends React.Component {
   }
 
   /**
-  /**
    * @method
    */
   render() {
     return (
-      <Locations>
+      <Locations path={this.props.path}>
         <Location path="/" handler={Home} />
         <Location path="/test" handler={Test} />
       </Locations>

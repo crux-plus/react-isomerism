@@ -47,9 +47,6 @@ export default {
           use: [
             {
               loader: 'css-loader',
-              options: {
-                modules: true,
-              }
             },
             {
               loader: 'postcss-loader',
@@ -76,11 +73,6 @@ export default {
       sourceMap: true,
       minimize: true,
     }),
-    new webpack.DefinePlugin({
-       'process.env': {
-         'NODE_ENV': JSON.stringify('production'),
-       }
-    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       // Specify the common bundle's name.
@@ -92,8 +84,7 @@ export default {
       // (3 children must share the module before it's separated)
     }),
     new ExtractTextPlugin({
-      filename: 'bundle.css',
-      allChunks: true,
+      filename: '[name].css',
     }),
     new webpack.DefinePlugin({
       'process.env': {

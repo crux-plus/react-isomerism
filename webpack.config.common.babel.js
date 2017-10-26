@@ -56,12 +56,13 @@ export default {
           // css loader module for webpack
           {
             loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
             options: {
-              importLoaders: 1,
-              // Enable/Disable CSS Modules
-              modules: true,
-              // Configure the generated ident
-              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              config: {
+                path: path.join(__dirname, 'postcss.config.js'),
+              },
             }
           },
         ]
