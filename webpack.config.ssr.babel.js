@@ -40,9 +40,14 @@ export default {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         // Webpack plugin for Babel
-        use: {
-          loader: 'babel-loader',
-        }
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              forceEnv: 'client',
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
